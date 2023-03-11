@@ -1,6 +1,21 @@
 <template>
-  <div class="Page">12223</div>
+  <div class="Page">
+    <Header />
+    <div class="hl-content">
+      <BotsNav />
+    </div>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
-<style lang="less" scoped></style>
+<script setup>
+import Header from "../../components/Header.vue";
+import BotsNav from "../../components/BotsNav.vue";
+</script>
+<style lang="less" scoped>
+.Page {
+  .hl-content {
+    height: calc(100vh - 74px);
+    display: flex;
+  }
+}
+</style>
