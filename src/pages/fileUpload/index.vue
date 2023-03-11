@@ -1,6 +1,10 @@
 <template>
-  <div class="Page">12223</div>
+  <div class="Page">
+    <BotNav :nowNav="[1, 3]" />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import BotNav from "../../components/BotNav.vue";
+</script>
 <style lang="less" scoped></style>
