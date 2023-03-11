@@ -8,6 +8,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
+        additionalData: `@import "/src/less/color.less";`,
       },
     },
   },
