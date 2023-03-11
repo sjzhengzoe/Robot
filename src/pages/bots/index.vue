@@ -1,6 +1,13 @@
 <template>
-  <div class="Page">12223</div>
+  <div class="Page">
+    <Header />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
-<style lang="less" scoped></style>
+<script setup lang="ts">
+import Header from "../../components/Header.vue";
+</script>
+<style lang="less" scoped>
+.Page {
+}
+</style>
