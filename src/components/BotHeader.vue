@@ -1,0 +1,203 @@
+<template>
+  <div class="BotHeader">
+    <div class="tb-details" id="jride-topbar-breadcrumb">
+      <h1 class="tb-header">
+        <router-link to="/bots">Chatbots</router-link>
+      </h1>
+      <div class="tb-active"></div>
+      <div class="tb-select">
+        <div class="name" tabindex="0" role="button" aria-haspopup="listbox">
+          Hi-Hello
+        </div>
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          class="icon"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 48C141.125 48 48 141.125 48 256s93.125 208 208 208 208-93.125 208-208S370.875 48 256 48zm0 272l-96-96h192l-96 96z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div class="tb-right-wrapper">
+      <button
+        type="button"
+        class="tb-right-button"
+        id="jride-topbar-train"
+        title="Train Bot"
+      >
+        <div class="tb-right-icon-wrapper">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            class="tb-trainicon"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M461.8 53.6c-.4-1.7-1.6-3-3.3-3.4-54.4-13.3-180.1 34.1-248.2 102.2-13.3 13.3-24.2 26.4-33.1 39.1-21-1.9-42-.3-59.9 7.5-50.5 22.2-65.2 80.2-69.3 105.1-1 5.9 3.9 11 9.8 10.4l81.1-8.9c.1 7.8.6 14 1.1 18.3.4 4.2 2.3 8.1 5.3 11.1l31.4 31.4c3 3 6.9 4.9 11.1 5.3 4.3.5 10.5 1 18.2 1.1l-8.9 81c-.6 5.9 4.5 10.8 10.4 9.8 24.9-4 83-18.7 105.1-69.2 7.8-17.9 9.4-38.8 7.6-59.7 12.7-8.9 25.9-19.8 39.2-33.1 68.4-68 115.5-190.9 102.4-248zM298.6 213.5c-16.7-16.7-16.7-43.7 0-60.4 16.7-16.7 43.7-16.7 60.4 0 16.7 16.7 16.7 43.7 0 60.4-16.7 16.7-43.7 16.7-60.4 0z"
+            ></path>
+            <path
+              d="M174.5 380.5c-4.2 4.2-11.7 6.6-19.8 8-18.2 3.1-34.1-12.8-31-31 1.4-8.1 3.7-15.6 7.9-19.7l.1-.1c2.3-2.3.4-6.1-2.8-5.7-9.8 1.2-19.4 5.6-26.9 13.1-18 18-19.7 84.8-19.7 84.8s66.9-1.7 84.9-19.7c7.6-7.6 11.9-17.1 13.1-26.9.3-3.2-3.6-5.1-5.8-2.8z"
+            ></path>
+          </svg>
+        </div>
+      </button>
+      <button type="button" class="tb-right-button" title="Show bot">
+        <div class="tb-right-icon-wrapper">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            class="tb-trainicon"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M128 464v-80H56a24 24 0 01-24-24V72a24 24 0 0124-24h400a24 24 0 0124 24v288a24 24 0 01-24 24H245.74zM456 80z"
+            ></path>
+          </svg>
+        </div>
+      </button>
+      <button type="button" class="tb-right-button" title="Help Bot">
+        <div class="tb-right-icon-wrapper">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            class="tb-trainicon"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+            ></path>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup></script>
+<style lang="less" scoped>
+.BotHeader {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 13px 40px 13px 104px;
+  justify-content: space-between;
+  border-bottom: 1px solid #eaeaea;
+
+  .tb-details {
+    display: flex;
+    align-items: center;
+    .tb-header {
+      margin: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+      a {
+        color: #2f45c5;
+        text-decoration: none;
+      }
+      &:after {
+        content: "/";
+        margin: 0 14px;
+        font-size: 14px;
+        color: #aaa;
+        font-weight: 700;
+      }
+    }
+    .tb-active {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #44e571;
+      margin-right: 6px;
+    }
+    .tb-select {
+      font-size: 14px;
+      font-weight: 500;
+      border-left: 6px;
+      color: #000;
+      cursor: text;
+      box-sizing: border-box;
+      align-items: center;
+      display: inline-flex;
+      line-height: 16px;
+      position: relative;
+
+      .name {
+        padding: 6px 24px 7px 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        cursor: pointer;
+      }
+
+      .icon {
+        font-size: 20px;
+        color: #6c82ff;
+        opacity: 0.5;
+        transition: opacity 0.2s ease;
+        top: calc(50% - 11px);
+        right: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+    }
+    .tb-active-users {
+      margin-left: 15px;
+    }
+  }
+  .tb-right-wrapper {
+    display: flex;
+    align-items: center;
+    .tb-right-button {
+      cursor: pointer;
+      outline: none;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: "Inter";
+      background-color: #2f45c5;
+      border: 1px solid;
+      color: #fff;
+      border-radius: 18px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      transition: -webkit-transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+      width: 36px;
+      margin-left: 10px;
+
+      .tb-right-icon-wrapper {
+        width: 36px;
+        height: 36px;
+        margin-left: 0;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s ease;
+      }
+    }
+  }
+}
+</style>
