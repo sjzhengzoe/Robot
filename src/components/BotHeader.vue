@@ -52,7 +52,12 @@
           </svg>
         </div>
       </button>
-      <button type="button" class="tb-right-button" title="Show bot">
+      <button
+        @click="handleShowRobot()"
+        type="button"
+        class="tb-right-button"
+        title="Show bot"
+      >
         <div class="tb-right-icon-wrapper">
           <svg
             stroke="currentColor"
@@ -91,17 +96,125 @@
       </button>
     </div>
   </div>
+  <!-- 机器人弹窗 -->
+  <div class="popup_robot" v-if="visibleRobot">
+    <div class="header">
+      <span>kairon</span>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div class="messages">
+          <!-- robot -->
+          <div class="content_of_robot">
+            <div class="text_box">
+              <div class="messagesContainer">
+                <div class="messageWrapper">
+                  <p class="message">Hello! How are you?</p>
+                </div>
+                <!-- 点赞 -->
+                <div class="feedbackWrapper">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="thumbsUp-5-2-77"
+                  >
+                    <path
+                      d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                    ></path>
+                  </svg>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="thumbsDown-5-2-80"
+                  >
+                    <path
+                      d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- my -->
+          <div class="content_of_me">
+            <div class="text">1</div>
+          </div>
+        </div>
+      </div>
+      <form class="input_box">
+        <input
+          type="text"
+          placeholder="Type a message"
+          class="input"
+          value=""
+        />
+        <button class="submit_btn" type="submit">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="send_icon"
+          >
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="footer flex f-y-c f-x-c">
+      <p class="text">Powered by</p>
+      <img
+        src="https://kairon.digite.com/assets/logo/kAIron.png"
+        alt="Kairon Logo"
+        class="footerLogo-5-2-12"
+      />
+    </div>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const visibleRobot = ref(false);
+// 显示机器人弹窗
+const handleShowRobot = () => {
+  if (visibleRobot.value) {
+    visibleRobot.value = false;
+  } else {
+    visibleRobot.value = true;
+  }
+};
+</script>
 <style lang="less" scoped>
 .BotHeader {
   display: flex;
   align-items: center;
   background-color: #fff;
-  padding: 13px 40px 13px 104px;
+  padding: 13px 40px 13px 40px;
   justify-content: space-between;
   border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 63px;
+  width: calc(100% - 63px);
+  z-index: 199;
 
   .tb-details {
     display: flex;
@@ -197,6 +310,206 @@
         align-items: center;
         transition: background-color 0.2s ease;
       }
+    }
+  }
+}
+.popup_robot {
+  height: 500px;
+  max-width: calc(100vw - 100px);
+  max-height: calc(100vh - 100px);
+  transition: height 0.5s ease 0s;
+  background-color: rgb(255, 255, 255);
+  right: 20px;
+  width: 350px;
+  bottom: 90px;
+  z-index: 1000;
+  overflow: hidden;
+  position: fixed;
+  box-shadow: rgb(0 0 0 / 16%) 0px 5px 40px;
+  border-radius: 16px;
+  .header {
+    width: 100%;
+    border: none;
+    margin: 0px;
+    display: flex;
+    outline: none;
+    padding: 0px;
+    font-size: 18px;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    border-radius: 0px 0px 4px 4px;
+
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    height: 60px;
+    background: rgb(43, 53, 149);
+    padding-right: 0px;
+    cursor: pointer;
+  }
+  .main {
+    height: calc((100% - 60px) - 26px);
+    padding: 10px 0px 0px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    .content {
+      flex: 1 1 0%;
+      height: calc(100% - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      .messages {
+        margin: 0 0 8px 0;
+        display: flex;
+        padding: 0 14px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex-direction: column;
+        scroll-behavior: smooth;
+      }
+      .content_of_robot {
+        align-items: flex-end;
+        width: 100%;
+        margin: 4px 2px;
+        display: flex;
+        .text_box {
+          display: flex;
+          max-width: 80%;
+          flex-direction: column;
+          .messagesContainer {
+            display: flex;
+            max-width: 80%;
+            flex-direction: column;
+            .messageWrapper {
+              background-color: rgb(224, 224, 224);
+              color: rgb(0, 0, 0);
+              margin: 3px 0px;
+              align-self: flex-start;
+              border-radius: 12px 12px 12px 0px;
+              .message {
+                font-size: 14px;
+                color: rgb(0, 0, 0);
+                padding: 20px;
+                margin: 0px;
+                overflow: hidden;
+                box-shadow: rgb(50 50 93 / 8%) 0px 0.25rem 6px,
+                  rgb(0 0 0 / 5%) 0px 1px 3px;
+                word-break: break-word;
+                font-weight: 400;
+                border-radius: 12px 12px 12px 0px;
+              }
+            }
+            .feedbackWrapper {
+              color: #000;
+              display: flex;
+              margin-top: 2px;
+              justify-content: flex-end;
+              .thumbsUp-5-2-77 {
+                cursor: pointer;
+                opacity: 0.4;
+                margin-right: 8px;
+                &:hover {
+                  opacity: 1;
+                }
+              }
+              .thumbsDown-5-2-80 {
+                cursor: pointer;
+                opacity: 0.4;
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .content_of_me {
+        align-items: flex-end;
+        width: 100%;
+        margin: 4px 2px;
+        display: flex;
+        align-self: flex-end;
+        justify-content: flex-end;
+        .text {
+          margin: 3px 0px;
+          max-width: 80%;
+          border-radius: 12px 12px 0px;
+
+          font-size: 14px;
+          color: rgb(255, 255, 255);
+          padding: 20px;
+          background-color: rgb(43, 53, 149);
+          border-radius: 12px 12px 0px;
+
+          margin: 0px;
+          box-shadow: rgb(50 50 93 / 8%) 0px 0.25rem 6px,
+            rgb(0 0 0 / 5%) 0px 1px 3px;
+          word-break: break-word;
+        }
+      }
+    }
+    .input_box {
+      margin: 4px 6px;
+      padding: 0px 14px;
+      background-color: transparent;
+      display: flex;
+      position: relative;
+      align-items: center;
+      .input {
+        height: 52px;
+        border: none;
+        margin: 0px;
+        line-height: 0px;
+        border-radius: 30px;
+        background-color: rgba(170, 170, 170, 0.3);
+        color: rgb(64, 64, 64);
+        outline: none;
+        padding: 6px 42px 6px 18px;
+        flex-grow: 1;
+        font-size: 14px;
+        max-width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.1s ease 0s;
+        font-family: Roboto;
+      }
+      .submit_btn {
+        border-radius: 50%;
+        right: 0px;
+        background-color: rgb(43, 53, 149);
+        border: 5px solid rgb(255, 255, 255);
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+        margin: 0px;
+        display: flex;
+        outline: none;
+        padding: 0px;
+        position: absolute;
+        max-width: none;
+        min-width: 0px;
+        align-items: center;
+        border-radius: 50%;
+        justify-content: center;
+        .send_icon {
+          color: rgb(255, 255, 255);
+          width: 1em;
+          height: 1em;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .footer {
+    color: gray;
+    font-size: 12px;
+    margin-top: 4px;
+    p {
+      margin: 0px;
+    }
+    img {
+      height: 15px;
     }
   }
 }
