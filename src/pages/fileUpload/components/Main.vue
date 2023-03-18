@@ -3,4 +3,10 @@
 </template>
 
 <script setup></script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.Main {
+  background-color: #fdfdfd;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+</style>
