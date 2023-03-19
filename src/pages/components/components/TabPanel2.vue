@@ -1,243 +1,85 @@
 <template>
-  <div class="storyComponents-tabPanel">
-    <div class="listTabPanel-container">
+  <div class="tabPanel">
+    <div class="container">
       <!-- 左边 -->
-      <div
-        class="MuiGrid-root componentsList-containter MuiGrid-item MuiGrid-grid-xs-3"
-      >
-        <div class="componentsList-header">
-          <div class="addNew-button">
-            <div class="addNew-button-cnt">
-              <input placeholder="Search or add" class="text" value="" /><svg
+      <div class="componentsList">
+        <!-- 搜索框 -->
+        <div class="search_box flex f-y-c">
+          <input placeholder="Search or add" class="input" value="" />
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            class="icon"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            ></path>
+          </svg>
+        </div>
+        <!-- 列表 -->
+        <div class="search_list">
+          <div class="list_item flex f-y-c f-sb">
+            <div class="name">back</div>
+            <div class="number">1</div>
+            <div class="btn_box">
+              <svg
                 stroke="currentColor"
                 fill="currentColor"
                 stroke-width="0"
                 viewBox="0 0 24 24"
-                class="icon"
+                class="ibc-icon"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path fill="none" d="M0 0h24v24H0z"></path>
                 <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
                 ></path>
               </svg>
             </div>
           </div>
         </div>
-        <div class="componentsList-content">
-          <ul class="MuiList-root componentsList">
-            <div
-              class="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
-              tabindex="0"
-              role="button"
-              aria-disabled="false"
-            >
-              <div
-                class="MuiListItemText-root MuiListItemText-dense"
-                title="back"
-              >
-                <span
-                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                  >back</span
-                >
-              </div>
-              <div class="MuiBox-root circular-progress-wrapper">
-                <div class="MuiBox-root label-cnt">
-                  <div class="MuiTypography-root MuiTypography-caption">0</div>
-                </div>
-              </div>
-              <div class="list-actions">
-                <button
-                  type="button"
-                  class="icon-button-clear delete-action"
-                  title="Delete"
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    class="ibc-icon"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <span class="MuiTouchRipple-root"></span>
-            </div>
-            <div
-              class="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
-              tabindex="0"
-              role="button"
-              aria-disabled="false"
-            >
-              <div
-                class="MuiListItemText-root MuiListItemText-dense"
-                id="6407e52e6f4e7ad5218fe4e9"
-                title="out_of_scope"
-              >
-                <span
-                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                  >out_of_scope</span
-                >
-              </div>
-              <div class="MuiBox-root jss838 circular-progress-wrapper">
-                <div class="MuiBox-root jss839 label-cnt">
-                  <div class="MuiTypography-root MuiTypography-caption">0</div>
-                </div>
-              </div>
-              <div class="list-actions">
-                <button type="button" class="icon-button-clear delete-action">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    class="ibc-icon"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <span class="MuiTouchRipple-root"></span>
-            </div>
-            <div
-              class="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
-              tabindex="0"
-              role="button"
-              aria-disabled="false"
-            >
-              <div
-                class="MuiListItemText-root MuiListItemText-dense"
-                id="6407e52e6f4e7ad5218fe4ea"
-                title="session_start"
-              >
-                <span
-                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                  >session_start</span
-                >
-              </div>
-              <div class="MuiBox-root jss840 circular-progress-wrapper">
-                <div class="MuiBox-root jss841 label-cnt">
-                  <div class="MuiTypography-root MuiTypography-caption">0</div>
-                </div>
-              </div>
-              <div class="list-actions">
-                <button type="button" class="icon-button-clear delete-action">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    class="ibc-icon"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <span class="MuiTouchRipple-root"></span>
-            </div>
-            <div
-              class="MuiButtonBase-root MuiListItem-root MuiListItem-dense MuiListItem-gutters MuiListItem-button"
-              tabindex="0"
-              role="button"
-              aria-disabled="false"
-            >
-              <div
-                class="MuiListItemText-root MuiListItemText-dense"
-                id="6407e52e6f4e7ad5218fe4eb"
-                title="nlu_fallback"
-              >
-                <span
-                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                  >nlu_fallback</span
-                >
-              </div>
-              <div class="MuiBox-root jss842 circular-progress-wrapper">
-                <div
-                  class="MuiCircularProgress-root danger MuiCircularProgress-colorPrimary MuiCircularProgress-determinate"
-                  role="progressbar"
-                  aria-valuenow="0"
-                  style="width: 25px; height: 25px; transform: rotate(-90deg)"
-                >
-                  <svg class="MuiCircularProgress-svg" viewBox="22 22 44 44">
-                    <circle
-                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate"
-                      cx="44"
-                      cy="44"
-                      r="20.2"
-                      fill="none"
-                      stroke-width="3.6"
-                      style="
-                        stroke-dasharray: 126.92;
-                        stroke-dashoffset: 126.92px;
-                      "
-                    ></circle>
-                  </svg>
-                </div>
-                <div class="MuiBox-root jss843 label-cnt">
-                  <div class="MuiTypography-root MuiTypography-caption">0</div>
-                </div>
-              </div>
-              <div class="list-actions">
-                <button
-                  type="button"
-                  class="icon-button-clear delete-action"
-                  title="Delete"
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    class="ibc-icon"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <span class="MuiTouchRipple-root"></span>
-            </div>
-          </ul>
-        </div>
       </div>
-
       <!-- 中间 -->
-      <div
-        class="MuiGrid-root componentDetails-containter MuiGrid-item MuiGrid-grid-xs-7"
-      >
-        <div class="componentDetails-header">
-          <h3 class="selectedInstanceName">greet</h3>
+      <div class="componentDetails">
+        <!-- 头部 -->
+        <div class="header flex f-y-c f-sb">
+          <h3 class="title">greet</h3>
+          <div class="search_box">
+            <input
+              type="text"
+              class="input"
+              placeholder="Search training phrase..."
+              value=""
+            />
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              class="icon"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
+              ></path>
+            </svg>
+          </div>
         </div>
-        <div class="componentDetails-content">
-          <div class="header">
-            <div class="title-wrapper">
+        <!-- 内容 -->
+        <div class="content">
+          <!-- 标题 -->
+          <div class="header flex f-y-c f-sb">
+            <div class="flex f-y-c">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -252,173 +94,98 @@
                   d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm5 2h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4h-4V5zM3 20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6zm2-5h4v4H5v-4zm8 5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6zm2-5h4v4h-4v-4z"
                 ></path>
               </svg>
-              <h3 class="title">Response</h3>
+              <div class="title">Training Phrases</div>
             </div>
           </div>
-          <div class="training-phrases-wrapper">
-            <div class="content-wrapper">
-              <div class="MuiFormControl-root MuiTextField-root input-field">
-                <div
-                  class="MuiInputBase-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiOutlinedInput-multiline MuiInputBase-marginDense MuiOutlinedInput-marginDense"
-                >
-                  <textarea
-                    rows="3"
-                    aria-invalid="false"
-                    id="trainingPhrase"
-                    name="trainingPhrase"
-                    placeholder="Enter new Response"
-                    class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
-                    style="height: 51px"
-                  ></textarea>
+          <!-- 主体 -->
+          <div class="main">
+            <!-- 1 -->
+            <textarea
+              rows="3"
+              aria-invalid="false"
+              name="trainingPhrase"
+              placeholder="Enter new training phrase"
+              class="textarea"
+              style="height: 51px"
+            />
+            <!-- 2 -->
+            <div class="tips flex f-y-c">
+              Press Shift + Enter to save
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                class="icon"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  d="M17 4h3c1.1 0 2 .9 2 2v2h-2V6h-3V4zM4 8V6h3V4H4c-1.1 0-2 .9-2 2v2h2zm16 8v2h-3v2h3c1.1 0 2-.9 2-2v-2h-2zM7 18H4v-2H2v2c0 1.1.9 2 2 2h3v-2zM18 8H6v8h12V8z"
+                ></path>
+              </svg>
+              <div class="link">Add Entity</div>
+            </div>
+            <!-- 3 -->
+            <div class="list">
+              <div class="item flex f-y-c f-sb">
+                <div class="flex f-y-c">
+                  <input
+                    class="checkbox"
+                    name="6407e52e6f4e7ad5218fe50c"
+                    type="checkbox"
+                    data-indeterminate="false"
+                    value=""
+                  />
+                  <div class="text">hey there</div>
                 </div>
-              </div>
-              <div class="info-data">
-                <p class="helper-text">Press Shift + Enter to save</p>
-                <div class="entity-helper-text">
+                <div class="btn_box">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
                     viewBox="0 0 24 24"
-                    class="link-icon"
+                    class="icon edit"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path
-                      d="M17 4h3c1.1 0 2 .9 2 2v2h-2V6h-3V4zM4 8V6h3V4H4c-1.1 0-2 .9-2 2v2h2zm16 8v2h-3v2h3c1.1 0 2-.9 2-2v-2h-2zM7 18H4v-2H2v2c0 1.1.9 2 2 2h3v-2zM18 8H6v8h12V8z"
+                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
                     ></path>
                   </svg>
-                  <span class="link-text">Add Link</span>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    class="delete icon"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                    ></path>
+                  </svg>
                 </div>
-              </div>
-              <div class="list-wrapper">
-                <label class="MuiFormControlLabel-root list-item">
-                  <span
-                    class="MuiButtonBase-root MuiIconButton-root jss862 MuiCheckbox-root MuiCheckbox-colorPrimary list-checkbox MuiIconButton-colorPrimary"
-                    aria-disabled="false"
-                  >
-                    <span class="MuiIconButton-label">
-                      <input
-                        class="jss865"
-                        name="6407e52e6f4e7ad5218fe50c"
-                        type="checkbox"
-                        data-indeterminate="false"
-                        value=""
-                      />
-                    </span>
-                  </span>
-                  <span
-                    class="MuiTypography-root MuiFormControlLabel-label list-label MuiTypography-body1"
-                  >
-                    <div class="list-content-wrapper">
-                      <p class="list-text">
-                        <span class="inlineEl">hey there</span>
-                      </p>
-                      <div class="list-actions">
-                        <button
-                          type="button"
-                          class="icon-button-clear edit-action"
-                          title="Edit"
-                        >
-                          <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 24 24"
-                            class="ibc-icon"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path fill="none" d="M0 0h24v24H0z"></path>
-                            <path
-                              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-                            ></path>
-                          </svg>
-                        </button>
-                        <button
-                          type="button"
-                          class="icon-button-clear delete-action"
-                          title="Delete"
-                        >
-                          <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            stroke-width="0"
-                            viewBox="0 0 24 24"
-                            class="ibc-icon"
-                            height="1em"
-                            width="1em"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path fill="none" d="M0 0h24v24H0z"></path>
-                            <path
-                              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                            ></path>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </span>
-                </label>
               </div>
             </div>
           </div>
         </div>
       </div>
       <!-- 右边 -->
-      <div
-        class="MuiGrid-root correspondingStories-containter MuiGrid-item MuiGrid-grid-xs-2"
-        id="jride-components-relatedstories"
-      >
-        <h3>Corresponding stories</h3>
-        <div class="correspondingStories-content">
-          <a
-            class="story-link"
-            href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe502"
-            ><div
-              class="MuiChip-root MuiChip-colorPrimary MuiChip-outlined MuiChip-outlinedPrimary"
-              title="happy path"
-            >
-              <div
-                class="MuiAvatar-root MuiAvatar-circular MuiChip-avatar MuiChip-avatarColorPrimary MuiAvatar-colorDefault"
-              >
-                h
-              </div>
-              <span class="MuiChip-label">happy path</span>
-            </div>
-          </a>
-          <a
-            class="story-link"
-            href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe503"
-            ><div
-              class="MuiChip-root MuiChip-colorPrimary MuiChip-outlined MuiChip-outlinedPrimary"
-              title="sad path 1"
-            >
-              <div
-                class="MuiAvatar-root MuiAvatar-circular MuiChip-avatar MuiChip-avatarColorPrimary MuiAvatar-colorDefault"
-              >
-                s
-              </div>
-              <span class="MuiChip-label">sad path 1</span>
-            </div></a
-          ><a
-            class="story-link"
-            href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe504"
-            ><div
-              class="MuiChip-root MuiChip-colorPrimary MuiChip-outlined MuiChip-outlinedPrimary"
-              title="sad path 2"
-            >
-              <div
-                class="MuiAvatar-root MuiAvatar-circular MuiChip-avatar MuiChip-avatarColorPrimary MuiAvatar-colorDefault"
-              >
-                s
-              </div>
-              <span class="MuiChip-label">sad path 2</span>
-            </div></a
-          >
+      <div class="correspondingStories">
+        <div class="title">Corresponding stories</div>
+        <div class="content">
+          <router-link to="/bots" class="link flex f-y-c">
+            <div class="little_avatar flex f-y-c f-x-c">h</div>
+            happy path
+          </router-link>
         </div>
       </div>
     </div>
@@ -426,11 +193,11 @@
 </template>
 <style lang="less" scoped>
 // 面板
-.storyComponents-tabPanel {
+.tabPanel {
   margin: 10px 0;
   height: calc(100vh - 248px);
   overflow: hidden;
-  .listTabPanel-container {
+  .container {
     height: calc(100% - 10px);
     overflow-y: hidden;
     overflow-x: auto;
@@ -440,7 +207,7 @@
     box-sizing: border-box;
 
     // 小面板 - 左边
-    .componentsList-containter {
+    .componentsList {
       height: 100%;
       padding: 0 10px;
       min-width: 200px;
@@ -449,148 +216,81 @@
       flex-basis: 25%;
       margin: 0;
       box-sizing: border-box;
-      .componentsList-header {
-        .addNew-button {
-          background-color: #fff;
-          height: 36px;
-          color: #888;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 5px;
-          border-radius: 20px;
-          border: 1px solid #eaeaea;
-          padding: 9px 15px 8px;
-          -webkit-margin-before: 1em;
-          margin-block-start: 1em;
-          -webkit-margin-after: 1em;
-          margin-block-end: 1em;
-          -webkit-margin-start: 0;
-          margin-inline-start: 0;
-          -webkit-margin-end: 0;
-          margin-inline-end: 0;
+      .search_box {
+        background-color: #fff;
+        width: 100%;
+        height: 36px;
+        color: #888;
+        margin: 14px 0;
+        border-radius: 20px;
+        border: 1px solid #eaeaea;
+        padding: 9px 15px 8px;
+        .input {
+          margin: 0;
+          width: 80%;
+          border: 0;
+          outline: 0;
+          background-color: inherit;
+          color: #000;
+          font-size: 14px;
         }
-        .addNew-button-cnt {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          .text {
-            margin: 0;
-            width: 80%;
-            border: 0;
-            outline: 0;
-            background-color: inherit;
-            color: #000;
-            font-size: 14px;
-          }
-          .icon {
-            color: #888;
-            font-size: 18px;
-            margin-left: 5px;
-          }
+        .icon {
+          color: #888;
+          font-size: 18px;
+          margin-left: 5px;
         }
       }
-      .componentsList-content {
+      .search_list {
         padding-bottom: 10px;
         overflow-y: auto;
         height: calc(100% - 60px);
-        .MuiList-root {
-          margin: 0;
-          padding: 0;
-          position: relative;
-          list-style: none;
-          .MuiListItem-root {
-            min-height: 40px;
-            transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-            padding-left: 16px;
-            padding-right: 16px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            justify-content: flex-start;
-            text-decoration: none;
-            width: 100%;
-            display: flex;
-            position: relative;
-            box-sizing: border-box;
-            text-align: left;
-            align-items: center;
-            color: inherit;
-            border: 0;
-            cursor: pointer;
-            margin: 0;
-            outline: 0;
-            user-select: none;
-            border-radius: 0;
-            vertical-align: middle;
-            background-color: transparent;
-            -webkit-appearance: none;
-            -webkit-tap-highlight-color: transparent;
-            &:hover {
-              .list-actions {
-                visibility: visible !important;
-              }
-            }
-            .MuiListItemText-root {
-              flex: 1 1 auto;
-              min-width: 0;
-              margin-top: 4px;
-              margin-bottom: 4px;
-            }
-            .circular-progress-wrapper {
-              display: inline-flex;
-              position: relative;
-              margin-left: 8px;
-              .label-cnt {
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                .MuiTypography-caption {
-                  font-size: 0.75rem;
-                  font-family: Inter, Arial;
-                  font-weight: 400;
-                  line-height: 1.66;
-                  margin: 0;
-                }
-              }
+        .list_item {
+          width: 100%;
+          padding: 4px 4px 4px 16px;
+          cursor: pointer;
+          justify-content: flex-start;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            .btn_box {
+              visibility: visible !important;
             }
           }
-          .list-actions {
-            display: flex;
+          .name {
+            width: 84px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 16px;
+          }
+          .number {
+            font-size: 16px;
+          }
+          .btn_box {
             visibility: hidden;
+            color: #dc3545;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: initial;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            margin-left: 5px;
-            .delete-action {
-              color: #dc3545;
-              padding: 0;
-              width: 32px;
-              height: 32px;
-              cursor: pointer;
-              outline: none;
-              border: none;
-              background-color: initial;
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              transition: background-color 0.2s ease;
-              .ibc-icon {
-                font-size: 20px;
-              }
+            justify-content: center;
+            transition: background-color 0.2s ease;
+            .ibc-icon {
+              font-size: 20px;
             }
           }
         }
       }
     }
     // 小面板 - 中间
-    .componentDetails-containter {
+    .componentDetails {
       min-width: 400px;
       height: 100%;
       padding: 0 10px;
@@ -599,20 +299,40 @@
       flex-basis: 58.333333%;
       margin: 0;
       box-sizing: border-box;
-      .componentDetails-header {
-        display: flex;
-        align-items: center;
-        .selectedInstanceName {
+      // 头部
+      .header {
+        .title {
           color: #2f45c5;
-          text-transform: none;
-          flex-grow: 1;
-          font-weight: 600;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
         }
+        .search_box {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          height: 36px;
+          .input {
+            outline: none;
+            border: 1px solid #eaeaea;
+            color: #000;
+            width: 292px;
+            border-radius: 18px;
+            background-color: #fff;
+            font-size: 14px;
+            padding: 9px 36px 8px;
+          }
+          .icon {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            font-size: 18px;
+            color: #2f45c5;
+          }
+        }
       }
-      .componentDetails-content {
+      // 内容
+      .content {
         overflow-y: auto;
         height: calc(100% - 60px);
         border-radius: 8px;
@@ -622,102 +342,55 @@
         width: 100%;
         .header {
           margin: 10px;
-          display: flex;
-          align-items: center;
-          .title-wrapper {
-            display: flex;
-            align-items: center;
-            .icon {
-              font-size: 16px;
-              color: #6c82ff;
-              margin-right: 8px;
-              -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
-            }
-            .title {
-              font-size: 16px;
-              font-weight: 500;
-              margin: 0;
-            }
+
+          .icon {
+            font-size: 16px;
+            color: #6c82ff;
+            margin-right: 8px;
+            transform: rotate(45deg);
+          }
+          .title {
+            font-size: 16px;
           }
         }
-        .training-phrases-wrapper {
+        .main {
           position: relative;
           height: calc(100% - 44px);
+          .textarea {
+            min-height: 80px;
+            font-size: 14px;
+            border-radius: 4px;
+            width: 100%;
+            color: rgba(0, 0, 0, 0.87);
+            cursor: text;
+            padding: 10.5px 14px;
+            border-color: rgba(0, 0, 0, 0.23);
+          }
 
-          .content-wrapper {
-            height: 100%;
-            .input-field {
-              padding: 14px 10px 4px;
-
-              // textarea
-              .MuiInputBase-root {
-                font-size: 14px;
-                position: relative;
-                border-radius: 4px;
-                width: 100%;
-                color: rgba(0, 0, 0, 0.87);
-                cursor: text;
-                display: inline-flex;
-                box-sizing: border-box;
-                align-items: center;
-
-                .MuiInputBase-input {
-                  width: 100%;
-                  padding: 10.5px 14px;
-                  border-color: rgba(0, 0, 0, 0.23);
-                  font-size: 14px;
-                  border-radius: 10px;
-                }
-              }
+          .tips {
+            margin: 6px 10px 14px 10px;
+            font-size: 14px;
+            color: #404040;
+            .icon {
+              color: #2f45c5;
+              margin-left: 14px;
             }
-            .info-data {
+            .link {
+              margin-left: 5px;
               display: flex;
               align-items: center;
-              margin: 0 10px 14px;
-              .helper-text {
-                font-size: 13px;
-                color: #404040;
-                margin: 0;
-              }
-              .entity-helper-text {
-                font-size: 13px;
-                color: #2f45c5;
-                border-radius: 4px;
-                max-width: 50%;
-                margin: 0 0 0 10px;
-                flex-grow: 1;
-
-                .insert-link {
-                  border: none;
-                  background-color: initial;
-                  outline: none;
-                  font-family: "Inter";
-                  margin-left: 10px;
-                  display: flex;
-                  align-items: center;
-                  color: #2f45c5;
-                  cursor: pointer;
-                  font-size: 13px;
-                  .link-icon {
-                    margin-right: 2px;
-                    font-size: 16px;
-                  }
-                  .link-text {
-                    font-weight: 500;
-                  }
-                }
-              }
+              color: #2f45c5;
+              cursor: pointer;
             }
           }
-          .list-wrapper {
+          .list {
             height: calc(100% - 120px);
             display: flex;
             flex-direction: column;
             max-height: calc(100vh - 364px);
             overflow-y: auto;
             margin-right: 10px;
-            .list-item {
+            .item {
               padding: 2px;
               margin-left: -11px;
               margin-right: 16px;
@@ -730,72 +403,39 @@
               vertical-align: middle;
               -webkit-tap-highlight-color: transparent;
               &:hover {
-                .list-actions {
+                .btn_box {
                   visibility: visible !important;
                 }
               }
-              .list-checkbox {
+              .checkbox {
                 font-size: 20px;
                 padding: 6px;
                 margin: 0 6px 0 12px;
               }
-              .list-label {
-                flex-grow: 1;
-                font-size: 1rem;
-                font-family: Inter, Arial;
-                font-weight: 400;
-                line-height: 1.5;
-                .list-content-wrapper {
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  .list-text {
-                    font-size: 14px;
-                    margin: 0;
-                    line-height: 1.8;
-                    word-break: break-word;
+              .text {
+                font-size: 14px;
+              }
+              .btn_box {
+                font-size: 20px;
+                visibility: hidden;
+                .icon {
+                  margin: 0 5px;
+                  &.edit {
+                    color: #6c82ff;
                   }
-                  .list-actions {
-                    display: flex;
-                    visibility: hidden;
-                    align-items: center;
-
-                    .icon-button-clear {
-                      color: #6c82ff;
-                      width: 32px;
-                      height: 32px;
-                      cursor: pointer;
-                      outline: none;
-                      border: none;
-                      background-color: initial;
-                      width: 36px;
-                      height: 36px;
-                      border-radius: 50%;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      transition: background-color 0.2s ease;
-                      .ibc-icon {
-                        font-size: 20px;
-                      }
-                      &.delete-action {
-                        color: #dc3545;
-                      }
-                    }
+                  &.delete {
+                    color: #dc3545;
                   }
                 }
               }
             }
           }
         }
-        .notfound-text {
-          margin: 20px;
-        }
       }
     }
 
     // 小面板 - 右边
-    .correspondingStories-containter {
+    .correspondingStories {
       height: 100%;
       padding: 0 10px;
       min-width: 200px;
@@ -804,50 +444,32 @@
       flex-basis: 16.666667%;
       margin: 0;
       box-sizing: border-box;
-      h3 {
+      .title {
         font-weight: 600;
-        text-transform: capitalize;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        margin-bottom: 10px;
       }
-      .correspondingStories-content {
+      .content {
         overflow-y: auto;
         height: calc(100% - 60px);
-        .story-link {
-          display: flex;
+        .link {
+          width: fit-content;
           text-decoration: none;
-          .MuiChip-root {
-            margin: 0 5px 5px 0;
-            cursor: pointer;
-            max-width: 90%;
-            color: #2f45c5;
-            background-color: transparent;
-            border: 1px solid #2f45c5;
-            height: 32px;
-            border-radius: 50px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            .MuiChip-avatar {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-left: 4px;
-              color: #fff;
-              background-color: rgb(32, 48, 137);
-              width: 24px;
-              height: 24px;
-              font-size: 0.75rem;
-              border-radius: 50%;
-            }
-            .MuiChip-label {
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              padding-left: 4px;
-              padding-right: 12px;
-            }
+          margin: 4px 5px 5px 0;
+          padding: 5px;
+          cursor: pointer;
+          color: #2f45c5;
+          background-color: transparent;
+          border: 1px solid #2f45c5;
+          height: 32px;
+          border-radius: 50px;
+          box-sizing: border-box;
+          .little_avatar {
+            color: #fff;
+            background-color: rgb(32, 48, 137);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 6px;
           }
         }
       }
