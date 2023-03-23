@@ -109,24 +109,29 @@
               style="height: 51px"
             />
             <!-- 2 -->
-            <div class="tips flex f-y-c">
-              Press Shift + Enter to save
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                class="icon"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M17 4h3c1.1 0 2 .9 2 2v2h-2V6h-3V4zM4 8V6h3V4H4c-1.1 0-2 .9-2 2v2h2zm16 8v2h-3v2h3c1.1 0 2-.9 2-2v-2h-2zM7 18H4v-2H2v2c0 1.1.9 2 2 2h3v-2zM18 8H6v8h12V8z"
-                ></path>
-              </svg>
-              <div class="link">Add Entity</div>
+            <div class="tips_box flex f-sb f-y-c">
+              <div class="tips flex f-y-c">
+                Press Shift + Enter to save
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="icon"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M17 4h3c1.1 0 2 .9 2 2v2h-2V6h-3V4zM4 8V6h3V4H4c-1.1 0-2 .9-2 2v2h2zm16 8v2h-3v2h3c1.1 0 2-.9 2-2v-2h-2zM7 18H4v-2H2v2c0 1.1.9 2 2 2h3v-2zM18 8H6v8h12V8z"
+                  ></path>
+                </svg>
+                <div class="link">Add Link</div>
+              </div>
+              <div class="check_box flex f-y-c">
+                <input type="checkbox" /> {} JSON
+              </div>
             </div>
             <!-- 3 -->
             <div class="list">
@@ -366,23 +371,28 @@
             padding: 10.5px 14px;
             border-color: rgba(0, 0, 0, 0.23);
           }
-
-          .tips {
+          .tips_box {
             margin: 6px 10px 14px 10px;
-            font-size: 14px;
-            color: #404040;
-            .icon {
-              color: #2f45c5;
-              margin-left: 14px;
+            .tips {
+              font-size: 14px;
+              color: #404040;
+              .icon {
+                color: #2f45c5;
+                margin-left: 14px;
+              }
+              .link {
+                margin-left: 5px;
+                display: flex;
+                align-items: center;
+                color: #2f45c5;
+                cursor: pointer;
+              }
             }
-            .link {
-              margin-left: 5px;
-              display: flex;
-              align-items: center;
-              color: #2f45c5;
-              cursor: pointer;
+            .check_box {
+              color: #404040;
             }
           }
+
           .list {
             height: calc(100% - 120px);
             display: flex;

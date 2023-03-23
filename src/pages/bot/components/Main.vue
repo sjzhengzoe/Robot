@@ -194,59 +194,9 @@
                       type="button"
                       class="icon-button-clear delete-action"
                       title="Delete Story"
+                      @click="() => handleToggleDeletePopup(true)"
                     >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        class="ibc-icon"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <h4 title="happy path" class="text-overflow story-name">
-                    happy path
-                  </h4>
-                  <div class="story-type-wrapper">
-                    <p class="story-type">Custom</p>
-                  </div>
-                </div>
-                <div class="uis-lower">
-                  <p class="update-details">
-                    Interactions: <span class="update-date">4</span>
-                  </p>
-                  <a
-                    class="story-link"
-                    href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe502"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="story-grid-item">
-              <div class="ui-storycard">
-                <div class="uis-upper">
-                  <div class="icons-wrapper">
-                    <div class="flow-icon-wrapper">
-                      <img
-                        src="../../../assets/flowIcon.svg"
-                        alt=""
-                        class="flow-icon"
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      class="icon-button-clear delete-action"
-                      title="Delete Story"
-                    >
+                      <div class="tips">Delete Story</div>
                       <svg
                         stroke="currentColor"
                         fill="currentColor"
@@ -278,218 +228,6 @@
                   <a
                     class="story-link"
                     href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe503"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="story-grid-item">
-              <div class="ui-storycard">
-                <div class="uis-upper">
-                  <div class="icons-wrapper">
-                    <div class="flow-icon-wrapper">
-                      <img
-                        src="../../../assets/flowIcon.svg"
-                        alt=""
-                        class="flow-icon"
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      class="icon-button-clear delete-action"
-                      title="Delete Story"
-                    >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        class="ibc-icon"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <h4 title="sad path 2" class="text-overflow story-name">
-                    sad path 2
-                  </h4>
-                  <div class="story-type-wrapper">
-                    <p class="story-type">Custom</p>
-                  </div>
-                </div>
-                <div class="uis-lower">
-                  <p class="update-details">
-                    Interactions: <span class="update-date">7</span>
-                  </p>
-                  <a
-                    class="story-link"
-                    href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe504"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="story-grid-item">
-              <div class="ui-storycard">
-                <div class="uis-upper">
-                  <div class="icons-wrapper">
-                    <div class="flow-icon-wrapper">
-                      <img
-                        src="../../../assets/flowIcon.svg"
-                        alt=""
-                        class="flow-icon"
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      class="icon-button-clear delete-action"
-                      title="Delete Story"
-                    >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        class="ibc-icon"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <h4 title="say goodbye" class="text-overflow story-name">
-                    say goodbye
-                  </h4>
-                  <div class="story-type-wrapper">
-                    <p class="story-type">Q&amp;A</p>
-                  </div>
-                </div>
-                <div class="uis-lower">
-                  <p class="update-details">
-                    Interactions: <span class="update-date">2</span>
-                  </p>
-                  <a
-                    class="story-link"
-                    href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe505"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="story-grid-item">
-              <div class="ui-storycard">
-                <div class="uis-upper">
-                  <div class="icons-wrapper">
-                    <div class="flow-icon-wrapper">
-                      <img
-                        src="../../../assets/flowIcon.svg"
-                        alt=""
-                        class="flow-icon"
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      class="icon-button-clear delete-action"
-                      title="Delete Story"
-                    >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        class="ibc-icon"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <h4 title="bot challenge" class="text-overflow story-name">
-                    bot challenge
-                  </h4>
-                  <div class="story-type-wrapper">
-                    <p class="story-type">Q&amp;A</p>
-                  </div>
-                </div>
-                <div class="uis-lower">
-                  <p class="update-details">
-                    Interactions: <span class="update-date">2</span>
-                  </p>
-                  <a
-                    class="story-link"
-                    href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe506"
-                    >Edit</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="story-grid-item">
-              <div class="ui-storycard">
-                <div class="uis-upper">
-                  <div class="icons-wrapper">
-                    <div class="flow-icon-wrapper">
-                      <img
-                        src="../../../assets/flowIcon.svg"
-                        alt=""
-                        class="flow-icon"
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      class="icon-button-clear delete-action"
-                      title="Delete Story"
-                    >
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        class="ibc-icon"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <h4
-                    title="ask the user to rephrase whenever they send a message with low nlu confidence"
-                    class="text-overflow story-name"
-                  >
-                    ask the user to rephrase whenever they send a message with
-                    low nlu confidence
-                  </h4>
-                  <div class="story-type-wrapper">
-                    <p class="story-type">Rule</p>
-                  </div>
-                </div>
-                <div class="uis-lower">
-                  <p class="update-details">
-                    Interactions: <span class="update-date">2</span>
-                  </p>
-                  <a
-                    class="story-link"
-                    href="/bot/6407e52b6f4e7ad5218fe4c8/story/6407e52e6f4e7ad5218fe536"
                     >Edit</a
                   >
                 </div>
@@ -546,135 +284,158 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- add new dialog -->
-  <div
-    @click="(e) => handleClickAddNewPopup(e)"
-    v-if="visibleAddNewPopup"
-    class="popup_add_new_story"
-    role="none presentation"
-    tabindex="-1"
-    :style="{
-      opacity: 1,
-      transition: `opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`,
-    }"
-  >
-    <div class="container" @click.stop="() => {}" role="dialog">
-      <div class="title">Select Story Template</div>
-      <div class="content">
-        <div class="templates-list">
-          <div class="template-type" role="button" tabindex="0">
-            <img
-              src="../../../assets/type_qna.svg"
-              alt="Q&amp;A"
-              class="type-image"
-            />
-            <p class="type-name">Q&amp;A</p>
-            <div
-              class="template-help"
-              title="Story with single user interaction and corresponding bot response."
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                class="help-icon"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
+    <!-- add new dialog -->
+    <div
+      @click="(e) => handleClickAddNewPopup(e)"
+      v-if="visibleAddNewPopup"
+      class="popup_add_new_story"
+      role="none presentation"
+      tabindex="-1"
+      :style="{
+        opacity: 1,
+        transition: `opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`,
+      }"
+    >
+      <div class="container" @click.stop="() => {}" role="dialog">
+        <div class="title">Select Story Template</div>
+        <div class="content">
+          <div class="templates-list">
+            <div class="template-type" role="button" tabindex="0">
+              <img
+                src="../../../assets/type_qna.svg"
+                alt="Q&amp;A"
+                class="type-image"
+              />
+              <p class="type-name">Q&amp;A</p>
+              <div
+                class="template-help"
+                title="Story with single user interaction and corresponding bot response."
               >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-                ></path>
-              </svg>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="help-icon"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="template-type" role="button" tabindex="0">
+              <img
+                src="../../../assets/type_rule.svg"
+                alt="Rule"
+                class="type-image"
+              />
+              <p class="type-name">Rule</p>
+              <div
+                class="template-help"
+                title="Rule based story is short conversation that always follows the same path."
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="help-icon"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="template-type" role="button" tabindex="0">
+              <img
+                src="../../../assets/type_custom.svg"
+                alt="Custom"
+                class="type-image"
+              />
+              <p class="type-name">Custom</p>
+              <div
+                class="template-help"
+                title="Build your custom story with multiple user and bot interactions."
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="help-icon"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="template-type" role="button" tabindex="0">
+              <img
+                src="../../../assets/type_multiflow.svg"
+                alt="Multiflow"
+                class="type-image"
+              />
+              <p class="type-name">Multiflow</p>
+              <div
+                class="template-help"
+                title="Build your custom story with multiple branches."
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  class="help-icon"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="template-type" role="button" tabindex="0">
-            <img
-              src="../../../assets/type_rule.svg"
-              alt="Rule"
-              class="type-image"
-            />
-            <p class="type-name">Rule</p>
-            <div
-              class="template-help"
-              title="Rule based story is short conversation that always follows the same path."
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                class="help-icon"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-                ></path>
-              </svg>
-            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete dialog -->
+    <div
+      v-if="visibleDeletePopup"
+      class="popup_delete_story"
+      :style="{
+        opacity: 1,
+        transition: `opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`,
+      }"
+    >
+      <div class="container">
+        <div class="title">Are you sure?</div>
+        <div class="content">
+          This story will be deleted permanently. Do you wish to proceed?
+        </div>
+        <div class="btn_box flex f-y-c f-x-end">
+          <div @click="handleToggleDeletePopup(false)" class="cancel btn">
+            CANCEL
           </div>
-          <div class="template-type" role="button" tabindex="0">
-            <img
-              src="../../../assets/type_custom.svg"
-              alt="Custom"
-              class="type-image"
-            />
-            <p class="type-name">Custom</p>
-            <div
-              class="template-help"
-              title="Build your custom story with multiple user and bot interactions."
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                class="help-icon"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="template-type" role="button" tabindex="0">
-            <img
-              src="../../../assets/type_multiflow.svg"
-              alt="Multiflow"
-              class="type-image"
-            />
-            <p class="type-name">Multiflow</p>
-            <div
-              class="template-help"
-              title="Build your custom story with multiple branches."
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                class="help-icon"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-                ></path>
-              </svg>
-            </div>
-          </div>
+          <div class="go btn" @click="handleDeleteStory">PROCEED</div>
         </div>
       </div>
     </div>
@@ -692,8 +453,15 @@ const handleClickAddNewPopup = (e) => {
 };
 
 const visibleAddNewPopup = ref(false);
+const visibleDeletePopup = ref(false);
 const handleToggleAddNewPopup = (isShow) => {
   visibleAddNewPopup.value = isShow;
+};
+const handleToggleDeletePopup = (isShow) => {
+  visibleDeletePopup.value = isShow;
+};
+const handleDeleteStory = () => {
+  visibleDeletePopup.value = false;
 };
 
 // 点击滑动到对应的模块
@@ -1004,8 +772,25 @@ const handleToTabList = (tab) => {
                     color: #dc3545;
                     visibility: hidden;
                     margin-left: auto;
+                    position: relative;
+                    &:hover {
+                      .tips {
+                        visibility: visible !important;
+                      }
+                    }
                     .ibc-icon {
                       font-size: 20px;
+                    }
+                    .tips {
+                      visibility: hidden;
+                      white-space: nowrap;
+                      position: absolute;
+                      top: 40px;
+                      right: 0;
+                      color: #fff;
+                      background-color: gray;
+                      padding: 10px;
+                      border-radius: 5px;
                     }
                   }
                 }
@@ -1240,6 +1025,63 @@ const handleToTabList = (tab) => {
 
       .help-popup {
         display: block;
+      }
+    }
+  }
+}
+.popup_delete_story {
+  position: fixed;
+  z-index: 1300;
+  inset: 0px;
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  height: 100%;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: calc(100% - 64px);
+    max-width: 600px;
+
+    display: flex;
+    max-height: calc(100% - 64px);
+    flex-direction: column;
+    margin: 32px;
+    position: relative;
+    overflow-y: auto;
+    border-radius: 4px;
+
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%),
+      0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+    .title {
+      flex: 0 0 auto;
+      margin: 0;
+      padding: 16px 24px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 32px;
+      font-weight: 500;
+    }
+    .content {
+      padding: 8px 24px;
+    }
+    .btn_box {
+      padding: 8px 24px;
+      .btn {
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      .cancel {
+        color: grey;
+      }
+      .go {
+        color: #2f45c5;
       }
     }
   }

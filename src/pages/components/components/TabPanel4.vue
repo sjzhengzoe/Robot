@@ -83,9 +83,9 @@
           <div class="main">
             <!-- 1 -->
             <div class="action_name_box">
-              <div class="name">Action Name*</div>
+              <div class="name">Name*</div>
               <input
-                placeholder="Action name"
+                placeholder="Name"
                 type="text"
                 class="input flex"
                 value=""
@@ -94,9 +94,12 @@
             <!-- 2 -->
             <div class="method_box">
               <div class="choose_item" :style="{ width: '40%' }">
-                <div class="name">Methods*</div>
-                <div class="select_box flex f-y-c f-sb">
-                  GET
+                <div class="name">Type*</div>
+                <div
+                  class="select_box flex f-y-c f-sb"
+                  @click="handleSelectList('type')"
+                >
+                  Select
                   <svg
                     class="icon"
                     focusable="false"
@@ -105,11 +108,18 @@
                   >
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
-                  <div class="select_list" :class="{ show: false }">
-                    <div>GET</div>
-                    <div>POST</div>
-                    <div>delete</div>
-                    <div>put</div>
+                  <div
+                    class="select_list"
+                    :class="{ show: nowSelectType === 'type' }"
+                    @click.stop="handleSelectList('')"
+                  >
+                    <div>Number</div>
+                    <div>Categorical</div>
+                    <div>Unfeaturized</div>
+                    <div>List</div>
+                    <div>Boolean</div>
+                    <div>Text</div>
+                    <div>Any</div>
                   </div>
                 </div>
               </div>
@@ -167,6 +177,12 @@ import { ref } from "vue";
 const nowTab = ref(1);
 const handleToggleTab = (tab) => {
   nowTab.value = tab;
+};
+
+// 下拉框切换
+const nowSelectType = ref("");
+const handleSelectList = (type) => {
+  nowSelectType.value = type;
 };
 </script>
 <style lang="less" scoped>
@@ -344,6 +360,7 @@ const handleToggleTab = (tab) => {
                 border-radius: 5px;
                 border: 1px solid #eaeaea;
                 position: relative;
+                z-index: 2;
                 .icon {
                   width: 24px;
                   height: 24px;

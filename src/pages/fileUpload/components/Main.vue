@@ -132,7 +132,8 @@
                   </label>
                 </div>
               </div>
-              <button type="button" class="file-action-button upload-btn">
+              <div class="file-action-button upload-btn">
+                <input type="file" class="input" />
                 <div class="file-action-button-wrapper">
                   <svg
                     stroke="currentColor"
@@ -153,7 +154,7 @@
                   </svg>
                 </div>
                 Upload files
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -185,7 +186,8 @@
                   modified to your needs. These files can be uploaded again to
                   train new models.
                 </div>
-                <button type="button" class="file-action-button">
+                <div class="file-action-button">
+                  <input type="file" class="input" />
                   <div class="file-action-button-wrapper">
                     <svg
                       stroke="currentColor"
@@ -206,7 +208,7 @@
                     </svg>
                   </div>
                   File Download
-                </button>
+                </div>
               </div>
               <div class="file-download-card">
                 <div class="file-download-card-header">
@@ -234,7 +236,8 @@
                   which is currently in kAIron You can deploy this model to
                   other bot instance.
                 </div>
-                <button type="button" class="file-action-button">
+                <div class="file-action-button">
+                  <input type="file" class="input" />
                   <div class="file-action-button-wrapper">
                     <svg
                       stroke="currentColor"
@@ -255,7 +258,7 @@
                     </svg>
                   </div>
                   Model Download
-                </button>
+                </div>
               </div>
             </div>
           </div>
@@ -367,6 +370,11 @@
               transition: background-color 0.2s ease;
               width: 100%;
               justify-content: center;
+              position: relative;
+              .input {
+                position: absolute;
+                opacity: 0;
+              }
               .file-action-button-wrapper {
                 background-color: #2f45c5;
                 width: 28px;

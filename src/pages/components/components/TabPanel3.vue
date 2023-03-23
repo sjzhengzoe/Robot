@@ -130,8 +130,8 @@
               <div class="title">API Actions</div>
             </div>
           </div>
-          <!-- 主体 -->
-          <div class="main">
+          <!-- API 主体 -->
+          <div v-if="nowTab === 1" class="main">
             <!-- 1 -->
             <div class="action_name_box">
               <div class="name">Action Name*</div>
@@ -146,7 +146,10 @@
             <div class="method_box">
               <div class="choose_item" :style="{ width: '20%' }">
                 <div class="name">Methods*</div>
-                <div class="select_box flex f-y-c f-sb">
+                <div
+                  class="select_box flex f-y-c f-sb"
+                  @click="handleSelectList('get')"
+                >
                   GET
                   <svg
                     class="icon"
@@ -156,7 +159,11 @@
                   >
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
-                  <div class="select_list" :class="{ show: false }">
+                  <div
+                    class="select_list"
+                    :class="{ show: nowSelectType === 'get' }"
+                    @click.stop="handleSelectList('')"
+                  >
                     <div>GET</div>
                     <div>POST</div>
                     <div>delete</div>
@@ -166,7 +173,10 @@
               </div>
               <div class="choose_item" :style="{ width: '30%' }">
                 <div class="name">Content Type*</div>
-                <div class="select_box flex f-y-c f-sb">
+                <div
+                  class="select_box flex f-y-c f-sb"
+                  @click="handleSelectList('applications')"
+                >
                   applications
                   <svg
                     class="icon"
@@ -176,9 +186,16 @@
                   >
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
-                  <div class="select_list" :class="{ show: false }">
-                    <div>application/x-www-form-urlencoded</div>
-                    <div>application/json</div>
+                  <div
+                    class="select_list"
+                    :class="{ show: nowSelectType === 'applications' }"
+                  >
+                    <div @click.stop="handleSelectList('')">
+                      application/x-www-form-urlencoded
+                    </div>
+                    <div @click.stop="handleSelectList('')">
+                      application/json
+                    </div>
                   </div>
                 </div>
               </div>
@@ -195,9 +212,14 @@
             <!-- 3 -->
             <div class="body_header_box">
               <div class="tabs">
-                <div class="tab flex f-y-c" :class="[{ selected: true }]">
+                <div
+                  class="tab flex f-y-c"
+                  @click="handleToggleSelectHttpTab('1')"
+                  :class="[{ selected: nowSelectHttpTab === '1' }]"
+                >
                   Headers (1)
                   <svg
+                    @click="handleHeaders('delete')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -213,6 +235,7 @@
                     ></path>
                   </svg>
                   <svg
+                    @click="handleHeaders('add')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -228,9 +251,14 @@
                     ></path>
                   </svg>
                 </div>
-                <div class="tab flex f-y-c" :class="[{ selected: false }]">
+                <div
+                  class="tab flex f-y-c"
+                  @click="handleToggleSelectHttpTab('2')"
+                  :class="[{ selected: nowSelectHttpTab === '2' }]"
+                >
                   Body (1)
                   <svg
+                    @click="handleBody('delete')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -246,6 +274,7 @@
                     ></path>
                   </svg>
                   <svg
+                    @click="handleBody('add')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -261,9 +290,14 @@
                     ></path>
                   </svg>
                 </div>
-                <div class="tab flex f-y-c" :class="[{ selected: false }]">
+                <div
+                  class="tab flex f-y-c"
+                  @click="handleToggleSelectHttpTab('3')"
+                  :class="[{ selected: nowSelectHttpTab === '3' }]"
+                >
                   response slots (1)
                   <svg
+                    @click="handleResponse('delete')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -279,6 +313,7 @@
                     ></path>
                   </svg>
                   <svg
+                    @click="handleResponse('add')"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
@@ -295,42 +330,181 @@
                   </svg>
                 </div>
               </div>
-              <div class="tabs_content flex f-y-start">
-                <div class="choose_item" :style="{ width: '10%' }">
-                  <div class="name">URL*</div>
-                  <input
-                    class="input"
-                    type="checkbox"
-                    placeholder="Enter request URL"
-                  />
-                </div>
-                <div class="choose_item" :style="{ width: '30%' }">
-                  <div class="name">Header Type*</div>
-                  <div class="select_box flex f-y-c f-sb">
-                    GET
-                    <svg
-                      class="icon"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 10l5 5 5-5z"></path>
-                    </svg>
-                    <div class="select_list" :class="{ show: false }">
-                      <div>1</div>
-                      <div>2</div>
-                      <div>3</div>
-                      <div>4</div>
+              <div class="tabs_content">
+                <!-- headers -->
+                <div v-if="nowSelectHttpTab === '1'">
+                  <div
+                    class="flex f-y-start"
+                    v-for="(item, idx) in headers"
+                    :key="idx"
+                  >
+                    <div class="choose_item" :style="{ width: '10%' }">
+                      <div class="name">Sec</div>
+                      <input
+                        class="input"
+                        type="checkbox"
+                        placeholder="Enter request URL"
+                      />
+                    </div>
+                    <div class="choose_item" :style="{ width: '30%' }">
+                      <div class="name">Header Type*</div>
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('headerType')"
+                      >
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'headerType' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>Value</div>
+                          <div>Slot</div>
+                          <div>Sender ID</div>
+                          <div>uSER mESSAGE</div>
+                          <div>Indent</div>
+                          <div>Chat Log</div>
+                          <div>Key Value</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="choose_item" :style="{ width: '40%' }">
+                      <div class="name">Key*</div>
+                      <input class="input" type="text" placeholder="Key" />
                     </div>
                   </div>
                 </div>
-                <div class="choose_item" :style="{ width: '40%' }">
-                  <div class="name">URL*</div>
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Enter request URL"
-                  />
+                <!-- body -->
+                <div v-if="nowSelectHttpTab === '2'">
+                  <div
+                    class="flex f-y-start"
+                    v-for="(item, idx) in body"
+                    :key="idx"
+                  >
+                    <div class="choose_item" :style="{ width: '10%' }">
+                      <div class="name">Sec</div>
+                      <input
+                        class="input"
+                        type="checkbox"
+                        placeholder="Enter request URL"
+                      />
+                    </div>
+                    <div class="choose_item" :style="{ width: '30%' }">
+                      <div class="name">Parameter Type*</div>
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('headerType')"
+                      >
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'headerType' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>Value</div>
+                          <div>Slot</div>
+                          <div>Sender ID</div>
+                          <div>uSER mESSAGE</div>
+                          <div>Indent</div>
+                          <div>Chat Log</div>
+                          <div>Key Value</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="choose_item" :style="{ width: '40%' }">
+                      <div class="name">Key*</div>
+                      <input class="input" type="text" placeholder="Key" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Response -->
+                <div v-if="nowSelectHttpTab === '3'">
+                  <div
+                    class="flex f-y-start"
+                    v-for="(item, idx) in response"
+                    :key="idx"
+                  >
+                    <div class="choose_item" :style="{ width: '20%' }">
+                      <div class="name">Slot*</div>
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('slot')"
+                      >
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'slot' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>Value</div>
+                          <div>Slot</div>
+                          <div>Sender ID</div>
+                          <div>uSER mESSAGE</div>
+                          <div>Indent</div>
+                          <div>Chat Log</div>
+                          <div>Key Value</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="choose_item" :style="{ width: '30%' }">
+                      <div class="name">Value*</div>
+                      <input class="input" type="text" placeholder="Value" />
+                    </div>
+                    <div class="choose_item" :style="{ width: '40%' }">
+                      <div class="name">Evaluation Type*</div>
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('headerType')"
+                      >
+                        <div>Expression</div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'headerType' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>Value</div>
+                          <div>Slot</div>
+                          <div>Sender ID</div>
+                          <div>uSER mESSAGE</div>
+                          <div>Indent</div>
+                          <div>Chat Log</div>
+                          <div>Key Value</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -342,7 +516,11 @@
             </div>
             <!-- 5 -->
             <div class="advance_box">
-              <div class="btn_box flex f-y-c" :class="{ select: false }">
+              <div
+                class="btn_box flex f-y-c"
+                :class="{ select: nowAdvancedShow }"
+                @click="handleToggleNowAdvancedShow(!nowAdvancedShow)"
+              >
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
@@ -360,7 +538,7 @@
                 </svg>
                 Advanced Options
               </div>
-              <div class="flex f-y-start">
+              <div v-if="nowAdvancedShow" class="flex f-y-start">
                 <div class="choose_item" :style="{ width: '60%' }">
                   <div class="name">Dispatch Response</div>
                   <div class="toggle_box flex f-y-c f-sb">
@@ -369,9 +547,12 @@
                   </div>
                 </div>
                 <div class="choose_item" :style="{ width: '30%' }">
-                  <div class="name">Content Type*</div>
-                  <div class="select_box flex f-y-c f-sb">
-                    applications
+                  <div class="name">Response Evaluation Type*</div>
+                  <div
+                    class="select_box flex f-y-c f-sb"
+                    @click="handleSelectList('responseType')"
+                  >
+                    Expression
                     <svg
                       class="icon"
                       focusable="false"
@@ -380,7 +561,11 @@
                     >
                       <path d="M7 10l5 5 5-5z"></path>
                     </svg>
-                    <div class="select_list" :class="{ show: false }">
+                    <div
+                      class="select_list"
+                      :class="{ show: nowSelectType === 'responseType' }"
+                      @click.stop="handleSelectList('')"
+                    >
                       <div>application/x-www-form-urlencoded</div>
                       <div>application/json</div>
                     </div>
@@ -390,6 +575,139 @@
             </div>
             <!-- button -->
             <div class="save_button">Save</div>
+          </div>
+          <!-- Email 主体 -->
+          <div v-if="nowTab === 2" class="main">
+            <!-- 1 -->
+            <div class="action_name_box">
+              <div class="name">Name*</div>
+              <input
+                placeholder="Name"
+                type="text"
+                class="input flex"
+                value=""
+              />
+            </div>
+            <!-- 2 -->
+            <div class="action_name_box">
+              <div class="name">SMTP URL*</div>
+              <input
+                placeholder="Name"
+                type="text"
+                class="input flex"
+                value=""
+              />
+              <!-- 3 -->
+              <div class="input_box flex f-y-c">
+                <div class="choose_item" :style="{ width: '40%' }">
+                  <div class="name">SMTP Port*</div>
+                  <input class="input" type="text" placeholder="0" />
+                </div>
+                <div class="choose_item" :style="{ width: '40%' }">
+                  <div class="name">Subject*</div>
+                  <input class="input" type="text" placeholder="Subject" />
+                </div>
+              </div>
+              <!-- 4 -->
+              <div class="select_box flex f-y-c">
+                <div class="choose_item" :style="{ width: '40%' }">
+                  <div class="name">SMTP UserId *</div>
+                  <div
+                    class="select_box flex f-y-c f-sb"
+                    @click="handleSelectList('userId')"
+                  >
+                    Select
+                    <svg
+                      class="icon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 10l5 5 5-5z"></path>
+                    </svg>
+                    <div
+                      class="select_list"
+                      :class="{ show: nowSelectType === 'userId' }"
+                      @click.stop="handleSelectList('')"
+                    >
+                      <div>GET</div>
+                      <div>POST</div>
+                      <div>delete</div>
+                      <div>put</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="choose_item" :style="{ width: '40%' }">
+                  <div class="name">Methods*</div>
+                  <div
+                    class="select_box flex f-y-c f-sb"
+                    @click="handleSelectList('password')"
+                  >
+                    Select
+                    <svg
+                      class="icon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 10l5 5 5-5z"></path>
+                    </svg>
+                    <div
+                      class="select_list"
+                      :class="{ show: nowSelectType === 'password' }"
+                      @click.stop="handleSelectList('')"
+                    >
+                      <div>GET</div>
+                      <div>POST</div>
+                      <div>delete</div>
+                      <div>put</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 5 -->
+              <div class="action_name_box">
+                <div class="name">From Email*</div>
+                <input
+                  placeholder="smtp.server_address.com"
+                  type="text"
+                  class="input flex"
+                  value=""
+                />
+              </div>
+              <!-- 6 -->
+              <div class="action_name_box">
+                <div class="name">To Email*</div>
+                <input
+                  placeholder="Enter comma seperated email ids: john.doe@example.com,mary.jane@example.com"
+                  type="text"
+                  class="input flex"
+                  value=""
+                />
+              </div>
+              <!-- 7 -->
+              <div class="action_name_box">
+                <div class="name">Response*</div>
+                <input
+                  placeholder="Response"
+                  type="text"
+                  class="input flex"
+                  value=""
+                />
+              </div>
+              <!-- 8 -->
+              <div class="advance_box flex f-y-c">
+                <div class="choose_item flex f-y-c">
+                  <div class="toggle_box flex f-y-c f-sb">
+                    <div class="left"></div>
+                    <div class="bg"></div>
+                  </div>
+                  <div class="name">TLS</div>
+                </div>
+              </div>
+              <!-- btn -->
+              <div class="save_button">Save</div>
+            </div>
           </div>
         </div>
       </div>
@@ -411,6 +729,50 @@ import { ref } from "vue";
 const nowTab = ref(1);
 const handleToggleTab = (tab) => {
   nowTab.value = tab;
+};
+// 下拉框切换
+const nowSelectType = ref("");
+const handleSelectList = (type) => {
+  nowSelectType.value = type;
+};
+// 切换 headers body response
+const nowSelectHttpTab = ref("1");
+const handleToggleSelectHttpTab = (tab) => {
+  nowSelectType.value = "";
+  nowSelectHttpTab.value = tab;
+};
+
+const headers = ref([{}]);
+const handleHeaders = (type) => {
+  if (type === "add") {
+    headers.value.push({});
+  } else if (type === "delete") {
+    headers.value = [];
+  }
+};
+
+const body = ref([{}]);
+const handleBody = (type) => {
+  if (type === "add") {
+    body.value.push({});
+  } else if (type === "delete") {
+    body.value = [];
+  }
+};
+
+const response = ref([{}]);
+const handleResponse = (type) => {
+  if (type === "add") {
+    response.value.push({});
+  } else if (type === "delete") {
+    response.value = [];
+  }
+};
+
+// advanced
+const nowAdvancedShow = ref(false);
+const handleToggleNowAdvancedShow = (isShow) => {
+  nowAdvancedShow.value = isShow;
 };
 </script>
 <style lang="less" scoped>
@@ -620,6 +982,56 @@ const handleToggleTab = (tab) => {
               }
             }
           }
+          .input_box {
+            .choose_item {
+              margin: 0 4px;
+              .input {
+                height: 25px;
+                border: 1px solid #eaeaea;
+                font-size: 16px;
+              }
+            }
+          }
+          .select_box {
+            .choose_item {
+              margin: 0 4px;
+              .select_box {
+                border: 1px solid #eaeaea;
+                position: relative;
+                border-radius: 5px;
+                padding: 10px;
+                .icon {
+                  width: 24px;
+                  height: 24px;
+                  color: #888;
+                  font-size: 24px;
+                }
+                .select_list {
+                  visibility: hidden;
+                  position: absolute;
+                  top: 30px;
+                  background-color: #fff;
+                  border-radius: 5px;
+                  padding: 10px 0;
+                  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+                    0px 8px 10px 1px rgb(0 0 0 / 14%),
+                    0px 3px 14px 2px rgb(0 0 0 / 12%);
+                  &.show {
+                    visibility: visible;
+                  }
+                  > div {
+                    white-space: nowrap;
+                    cursor: pointer;
+                    padding: 4px 20px;
+                    font-size: 16px;
+                    &:hover {
+                      background-color: rgba(0, 0, 0, 0.08);
+                    }
+                  }
+                }
+              }
+            }
+          }
           // 3
           .body_header_box {
             margin-top: 8px;
@@ -766,6 +1178,12 @@ const handleToggleTab = (tab) => {
             }
             .choose_item {
               margin: 0 4px 20px;
+              .name {
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.54);
+                margin: 10px 20px 0;
+              }
+
               .select_box {
                 border-bottom: 1px solid #eaeaea;
                 position: relative;

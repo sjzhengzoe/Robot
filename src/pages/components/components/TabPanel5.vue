@@ -84,8 +84,11 @@
             <!-- 1 -->
             <div class="method_box">
               <div class="choose_item" :style="{ width: '100%' }">
-                <div class="name">Methods*</div>
-                <div class="select_box flex f-y-c f-sb">
+                <div class="name">Slot Name*</div>
+                <div
+                  class="select_box flex f-y-c f-sb"
+                  @click="handleSelectList('slot')"
+                >
                   GET
                   <svg
                     class="icon"
@@ -95,9 +98,13 @@
                   >
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
-                  <div class="select_list" :class="{ show: false }">
-                    <div>GET</div>
-                    <div>POST</div>
+                  <div
+                    class="select_list"
+                    :class="{ show: nowSelectType === 'slot' }"
+                    @click.stop="handleSelectList('')"
+                  >
+                    <div>bot</div>
+                    <div>kairon_action_response</div>
                     <div>delete</div>
                     <div>put</div>
                   </div>
@@ -109,52 +116,99 @@
               <div class="title_box flex f-sb">
                 <div class="title">Mappings</div>
                 <div class="btn_box flex f-y-c">
-                  <div class="btn">Add</div>
-                  <div class="btn">Delete All</div>
+                  <div @click="handleMapping('add')" class="btn">Add</div>
+                  <div @click="handleMapping('delete')" class="btn">
+                    Delete All
+                  </div>
                 </div>
               </div>
-              <div class="mapping_content">
-                <div>Mapping-1</div>
-                <div class="item flex f-sb">
-                  <div class="item_title">Intent</div>
-                  <div class="choose_item" :style="{ width: '70%' }">
-                    <div class="select_box flex f-y-c f-sb">
-                      <div></div>
-                      <svg
-                        class="icon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
+              <div class="mapping_content" v-if="mapping.length > 0">
+                <div v-for="(item, idx) in mapping" :key="idx">
+                  <div>Mapping-{{ idx + 1 }}</div>
+                  <div class="item flex f-sb">
+                    <div class="item_title">Type</div>
+                    <div class="choose_item" :style="{ width: '70%' }">
+                      <div
+                        class="select_box no_border flex f-y-c f-sb"
+                        @click="handleSelectList('mapping_type')"
                       >
-                        <path d="M7 10l5 5 5-5z"></path>
-                      </svg>
-                      <div class="select_list" :class="{ show: false }">
-                        <div>GET</div>
-                        <div>POST</div>
-                        <div>delete</div>
-                        <div>put</div>
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'mapping_type' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>From Entity</div>
+                          <div>From Intent</div>
+                          <div>From Text</div>
+                          <div>From Trigger Intent</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="item flex f-sb">
-                  <div class="item_title">Intent</div>
-                  <div class="choose_item" :style="{ width: '70%' }">
-                    <div class="select_box flex f-y-c f-sb">
-                      <div></div>
-                      <svg
-                        class="icon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
+                  <div class="item flex f-sb">
+                    <div class="item_title">Intent</div>
+                    <div class="choose_item" :style="{ width: '70%' }">
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('indent')"
                       >
-                        <path d="M7 10l5 5 5-5z"></path>
-                      </svg>
-                      <div class="select_list" :class="{ show: false }">
-                        <div>GET</div>
-                        <div>POST</div>
-                        <div>delete</div>
-                        <div>put</div>
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'indent' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>From Entity</div>
+                          <div>From Intent</div>
+                          <div>From Text</div>
+                          <div>From Trigger Intent</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item flex f-sb">
+                    <div class="item_title">Not Intent</div>
+                    <div class="choose_item" :style="{ width: '70%' }">
+                      <div
+                        class="select_box flex f-y-c f-sb"
+                        @click="handleSelectList('no_indent')"
+                      >
+                        <div></div>
+                        <svg
+                          class="icon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M7 10l5 5 5-5z"></path>
+                        </svg>
+                        <div
+                          class="select_list"
+                          :class="{ show: nowSelectType === 'no_indent' }"
+                          @click.stop="handleSelectList('')"
+                        >
+                          <div>From Entity</div>
+                          <div>From Intent</div>
+                          <div>From Text</div>
+                          <div>From Trigger Intent</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -187,6 +241,21 @@ import { ref } from "vue";
 const nowTab = ref(1);
 const handleToggleTab = (tab) => {
   nowTab.value = tab;
+};
+
+const mapping = ref([]);
+const handleMapping = (type) => {
+  if (type === "add") {
+    mapping.value.push({});
+  } else if (type === "delete") {
+    mapping.value = [];
+  }
+};
+
+// 下拉框切换
+const nowSelectType = ref("");
+const handleSelectList = (type) => {
+  nowSelectType.value = type;
 };
 </script>
 <style lang="less" scoped>
@@ -373,6 +442,7 @@ const handleToggleTab = (tab) => {
                   visibility: hidden;
                   position: absolute;
                   top: 30px;
+
                   background-color: #fff;
                   border-radius: 5px;
                   padding: 10px 0;
@@ -452,6 +522,7 @@ const handleToggleTab = (tab) => {
                     visibility: hidden;
                     position: absolute;
                     top: 30px;
+                    z-index: 2;
                     background-color: #fff;
                     border-radius: 5px;
                     padding: 10px 0;
@@ -544,6 +615,10 @@ const handleToggleTab = (tab) => {
                     border: 1px solid #eaeaea;
                     position: relative;
                     border-radius: 5px;
+                    &.no_border {
+                      border: 0;
+                      border-bottom: 1px solid #eaeaea;
+                    }
 
                     .icon {
                       width: 24px;
@@ -555,6 +630,7 @@ const handleToggleTab = (tab) => {
                       visibility: hidden;
                       position: absolute;
                       top: 30px;
+                      z-index: 2;
                       background-color: #fff;
                       border-radius: 5px;
                       padding: 10px 0;
